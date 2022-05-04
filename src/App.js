@@ -11,6 +11,9 @@ function App() {
   const Decrement = () => {
     store.dispatch({ type: 'DECREMENT' });
   };
+  const addBy = () => {
+    store.dispatch({ type: 'ADD', payload: 8 });
+  };
 
   return (
     <div className="App">
@@ -21,7 +24,10 @@ function App() {
       </button>
       
       <button onClick={Decrement}>
-        Increment
+        Decrement
+      </button>
+      <button onClick={ addBy }>
+        Add By
       </button>
 
     </div>

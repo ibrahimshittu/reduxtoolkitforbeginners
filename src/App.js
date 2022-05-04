@@ -1,18 +1,23 @@
-import { useSelector } from 'react-redux';
-import store from './redux/store';
+import { useSelector, useDispatch } from 'react-redux';
+import { actions } from './redux/store';
 import './App.css';
 
 function App() {
 
   const counter = useSelector(state => state.count);
+  const dispatch = useDispatch();
+
+
   const Increment = () => {
-    store.dispatch({ type: 'INCREMENT' });
+    dispatch(actions.increment());
   };
   const Decrement = () => {
-    store.dispatch({ type: 'DECREMENT' });
+    dispatch(actions.decrement());
+
   };
   const addBy = () => {
-    store.dispatch({ type: 'ADD', payload: 8 });
+    dispatch(actions.add(9));
+
   };
 
   return (
